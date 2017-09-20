@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Polygon";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+    string message = "<b> my polygon for test </b>";
+}
+
+<h2>Polygon</h2> <br />
+@message <br />
+@Html.Raw(message)<br />
+
+@{
+    @: "@@:" - indicate that is not a variable, just text<br />
+
+    @:test@@test.qa
+}

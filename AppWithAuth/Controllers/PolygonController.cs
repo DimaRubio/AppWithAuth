@@ -9,6 +9,7 @@ namespace AppWithAuth.Controllers
     public class PolygonController : Controller
     {
         // GET: Polygon
+        [Authorize(Roles = "admin")]
         public ActionResult Polygon()
         {
             return View();

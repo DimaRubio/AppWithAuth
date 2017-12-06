@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Configuration;
+using System.Configuration;
 
 namespace AppWithAuth.Controllers
 {
@@ -15,7 +16,17 @@ namespace AppWithAuth.Controllers
             //this.Header.Title = WebConfigurationManager.AppSettings["websiteName"];
             //txtHeader.Text = Header.Title;
             //txt1.Text = WebConfigurationManager.AppSettings["welcomeMessage"];
-            ViewBag.ClientValidation = WebConfigurationManager.AppSettings["ClientValidationEnabled"];
+            ViewBag.clientValidation = WebConfigurationManager.AppSettings["ClientValidationEnabled"];
+            //WebConfigurationManager.AppSettings["CustomValue"].V
+            //config.AppSettings.Settings["Password"].Value = "something";
+            ViewBag.customValue = WebConfigurationManager.AppSettings["CustomValue"];
+
+            var configuration = WebConfigurationManager.OpenWebConfiguration("~");
+            var appSettingsSection = (AppSettingsSection)configuration.GetSection("appSettings");
+
+            
+
+
             return View();
         }
     }

@@ -5,12 +5,11 @@ using System.Web;
 
 namespace AppWithAuth.Models
 {
-    public class Product
+    public class Customer
     {
-        public int ProductID { get; set; }
+        public int CustomerID { get; set; }
         public string Name { get; set; }
-        public decimal Price { get; set; }
+        public decimal Email { get; set; }
+        public List<Order> Orders { get; set; }
     }
-
-
 }

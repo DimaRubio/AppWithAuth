@@ -8,7 +8,7 @@ using System.Data.Entity;
 
 namespace AppWithAuth.Models
 {
-    public class AppDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
+    public class AppDbInitializer : CreateDatabaseIfNotExists<ApplicationDbContext>  //DropCreateDatabaseAlways
     {
         protected override void Seed(ApplicationDbContext context)
         {
@@ -28,7 +28,7 @@ namespace AppWithAuth.Models
 
             // создаем пользователей
             var admin = new ApplicationUser { Email = "admin@gmail.com", UserName = "Admin" };
-            string password = "pr0st0admin";
+            string password = "123456aA!";
             var result = userManager.Create(admin, password);
 
             // если создание пользователя прошло успешно
